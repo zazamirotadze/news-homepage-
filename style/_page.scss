@@ -1,0 +1,284 @@
+@import "./mixins";
+.page{
+    height: 100%;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto auto auto;
+    padding: 70px;
+    @include  respond(tab-land){
+        padding: 50px;
+    }
+    @include  respond(tab-port){
+        padding: 40px;
+        gap: 20px;
+    }
+    @include  respond(phone){
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    & .nav{
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        & .logo-img{
+            @include  respond(phone){
+                scale: 0.7;
+                margin-left: -10px;
+             }
+        }
+
+
+        &__menu-img{
+            display: none;
+            & img{
+                margin-top: 15px;
+            }
+            @include  respond(phone){
+                display: block;
+            }
+        }
+        
+
+
+
+        &__menu-overlay{
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: fixed;
+            background-color: rgba($Verydarkblue, .35);
+            top: 0;
+            left: 0%;
+            &-menu{
+                width: 70%;
+                height:100%;
+                background-color: $Offwhite;
+                position: absolute;
+                right: 0;
+                & img{
+                    position: absolute;
+                    right: 5%; 
+                    top: 3%; 
+                }
+                & .btn-container{
+                    position: absolute;
+                    top: 15%;
+                    left: 10%;
+                    & button{
+                        margin-top: 20px;
+                        font-size: 20px;
+                        display: block;
+                        background-color: transparent;
+                        border: none;
+                        color: $Verydarkblue;
+                        cursor: pointer;
+                        &:hover{
+                            color: $Softred;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+
+
+        
+        &__buttons-div{      
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 65px;
+            outline: none;
+            @include  respond(tab-port){
+                gap: 45px;
+            }
+            @include  respond(phone){
+                display: none;
+            }
+            & button{
+                display: inline-block;
+                background-color: transparent;
+                border: none;
+                color: $Verydarkblue;
+                cursor: pointer;
+                &:hover{
+                    color: $Softred;
+                }
+            }
+        }
+    }
+    & .div-1{
+        grid-column:1 / 7;
+
+ 
+        &__img-web3--div{
+            background-image: url(/assets/images/image-web-3-desktop.jpg);
+            background-size: 100% 350px; 
+            background-repeat: no-repeat;
+            height: 340px;
+            width: 100%;
+            @include  respond(phone){
+                background-image: url(/assets/images/image-web-3-mobile.jpg);
+            }
+
+ 
+        }
+        &__information-div{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            @include  respond(tab-port){
+                gap: 20px;
+            }
+            @include  respond(phone){
+                display: flex;
+                flex-direction: column;
+            }
+            &-part-1{
+              
+                & h1{
+                    font-size: 50px;
+                    font-family: inter-extrabold;
+                    color: $Verydarkblue;
+                    line-height: 50px;
+                }
+            }
+            &-part-2{    
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                @include  respond(phone){
+                    gap: 20px;
+                }
+                & p{
+                    color: $Darkgrayishblue;
+                    line-height: 23px;
+                  
+                }
+                & button{
+                    text-transform: uppercase;
+                    width: 150px;
+                    height: 40px;
+                    background-color: $Softred;
+                    color: $Offwhite;
+                    letter-spacing: 2px;
+                    border: none;
+                    &:hover, &:active{
+                        cursor: pointer;
+                        background-color: $Verydarkblue;
+                    }
+                }
+            }
+        }
+    }
+    & .div-2{
+        grid-column:7 / -1;
+    
+        display: flex;
+        grid-auto-rows: max-content;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $Verydarkblue;
+        @include  respond(phone){
+           height: 400px;
+           margin-top: 50px;
+        }
+        & h2{
+            width: 90%;
+            font-size: 35px;
+            color: $Softorange;
+            font-weight: bold;
+        }
+        & h4{
+            font-size: 17px;
+            color: $Offwhite;
+            cursor: pointer;
+            &:hover, &:active{
+                color: $Softorange;
+            }
+        }
+        & p{
+            margin-top: 10px;
+            color: $Grayishblue;
+        }
+        &__line{
+            height: 1px;
+            width: 90%;
+            background-color: $Darkgrayishblue;
+        }
+        &__newsdiv-1{
+            width: 90%;
+        }
+        &__newsdiv-2{
+            width: 90%;
+        }
+        &__newsdiv-3{
+            width: 90%;
+        }
+    }
+    & .div-3{
+        display: flex;
+  
+        &__01, &__02, &__03{
+            display: flex;
+            & img{
+                width: 100px;
+
+            }
+            & h3{
+                font-size: 25px;
+                color: $Darkgrayishblue; 
+                
+            }
+            & h5{
+                font-size: 17px;
+                color: $Verydarkblue;
+                cursor: pointer;
+                font-family: inter-extrabold;
+                &:hover{
+                    color: $Softred;
+                }
+            }
+            & p{
+               color: $Darkgrayishblue; 
+               line-height: 20px;
+            }
+        }
+        &__01{
+            grid-column: 1 / 4;
+            @include  respond(tab-port){
+                grid-column: 1 / 5;
+            }
+            @include  respond(phone){
+                margin-top: 50px;
+            }
+        }
+        &__02{
+            grid-column: 4 / 7;
+            @include  respond(tab-port){
+                grid-column:  5 / 9;
+            }
+        }
+        &__03{
+            grid-column: 7 / -1;
+            @include  respond(tab-port){
+                grid-column: 1 / 5;
+            }
+        }
+        &__info-div{
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px  0px  5px 15px;
+            width: 100%;
+            
+        }
+    }
+}
