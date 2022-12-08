@@ -27,7 +27,9 @@ body {
   gap: 40px;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: auto auto auto;
+  margin: 0 auto;
   padding: 70px;
+  max-width: 1440px;
 }
 @media (max-width: 1200px) {
   .page {
@@ -186,16 +188,17 @@ body {
   color: hsl(236deg, 13%, 42%);
   line-height: 23px;
 }
-.page .div-1__information-div-part-2 button {
+.page .div-1__information-div-part-2 a {
   text-transform: uppercase;
-  width: 150px;
-  height: 40px;
+  text-decoration: none;
+  display: inline-block;
   background-color: hsl(5deg, 85%, 63%);
+  padding: 8px 20px;
   color: hsl(36deg, 100%, 99%);
   letter-spacing: 2px;
   border: none;
 }
-.page .div-1__information-div-part-2 button:hover, .page .div-1__information-div-part-2 button:active {
+.page .div-1__information-div-part-2 a:hover, .page .div-1__information-div-part-2 a:active {
   cursor: pointer;
   background-color: hsl(240deg, 100%, 5%);
 }

@@ -5,7 +5,9 @@
     gap: 40px;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: auto auto auto;
+    margin: 0 auto;
     padding: 70px;
+    max-width: 1440px;
     @include  respond(tab-land){
         padding: 50px;
     }
@@ -160,11 +162,12 @@
                     line-height: 23px;
                   
                 }
-                & button{
+                & a{
                     text-transform: uppercase;
-                    width: 150px;
-                    height: 40px;
+                    text-decoration: none;
+                    display: inline-block;
                     background-color: $Softred;
+                    padding: 8px 20px;
                     color: $Offwhite;
                     letter-spacing: 2px;
                     border: none;
